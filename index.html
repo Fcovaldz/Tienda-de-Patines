@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rollerblade</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <h1><img src="img/logo2.png" width="20" height="50" alt="">Rollerblade</h1>
+                </div>
+                <div class="two columns u-pull-right">
+                    <ul>
+                        <li class="submenu">
+                            <img src="img/cart.png" alt="">
+                            <div id="carrito">
+                                <p class="vacio">carrito vacio</p>
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Platillos</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito"
+                                class="button u-full-width">vaciar carrito</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container"> 
+            <div class="row">  
+                <div class="six columns">
+                    <div class="contenido-hero">
+                        <h2>Patina por la vida.</h2>
+                        <p>¡Variedad de Patines!</p>
+                        <form>
+                            <input class="u-full-width" type="text" placeholder="¿Que estilo te gustaria probar?" id="buscador">
+                            <input type="submit" class="submit-buscador">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="barra">
+        <div class="container">
+            <div class="row">
+                <div class="four columns icono icono1">
+                    <p>100 Patines diferentes<br>
+                    Explora los nuevos modelos</p>
+                </div>
+                <div class="four columns icono icono2">
+                    <p>Fabricantes expertos<br>
+                    Prueba los nuevas estilos</p>
+                </div>
+                <div class="four columns icono icono3">
+                    <p>Incluye llantas gratis<br>
+                    Prueba modelo favorita</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="lista-platillos" class="container">
+        <h1 class="encabezado">Pedidos en Linea</h1>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/roces.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Roces</h4>
+                        <p>Patines Roces</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="1">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/usd-1.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>USD</h4>
+                        <p>Frames incluido</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="2">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/valo-1.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Valo</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="3">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/k2.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>K2</h4>
+                        <p>frames k2</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="4">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/valo-2.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Valo</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$50 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="5">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/razors-1.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Razors</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="6">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/remz-2.png" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Remz</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="7">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/usd-1.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>USD</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="8">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/roces.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Roces</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="9">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/valo-2.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Valo</h4>
+                        <p>Juego de 8 llantas incluidas</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$350</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="10">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/razors-1.jpg" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Razors</h4>
+                        <p>Frames incluido</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$500 <span class="u-pull-right">$150</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="11">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="four columns">
+                <div class="card">
+                    <img src="img/remz-2.png" class="imagen-platillo u-full-width" width="640" height="240">
+                    <div class="info-card">
+                        <h4>Remz</h4>
+                        <p>Frames incluido</p>
+                        <img src="img/estrellas.png">
+                        <p class="precio">$550 <span class="u-pull-right">$200</span> </p>
+                        <a href="#" class="u-full-width button-primary button input agregar-carrito" data-id="12">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <footer class="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="four columns">
+                    <nav class="menu">
+                        <a class="enlace" href="#">Pedidos a domicilio</a>
+                        <a class="enlace" href="#">Pedidos en linea</a>
+                        <a class="enlace" href="#">Pedidos por telefono</a>
+                        <a class="enlace" href="#">Patines</a>
+                        <a class="enlace" href="#">Refacciones</a>
+                    </nav>
+                </div>
+                <div class="four columns">
+                    <nav class="menu">
+                        <a class="enlace" href="#">Tienda</a>
+                        <a class="enlace" href="#">Ubicacion</a>
+                        <a class="enlace" href="#">Telefono</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
