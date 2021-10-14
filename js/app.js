@@ -1,127 +1,127 @@
 const carrito = document.getElementById("carrito");
-const platillos = document.getElementById("lista-platillos");
-const listaPlatillos = document.querySelector("#lista-carrito tbody");
+const productos = document.getElementById("lista-productos");
+const listaproductos = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
 
 cargarEventListeners();
 
 function cargarEventListeners() {
-  platillos.addEventListener("click", comprarPlatillo);
-  carrito.addEventListener("click", eliminarPlatillo);
+  productos.addEventListener("click", comprarProducto);
+  carrito.addEventListener("click", eliminarProducto);
   vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
   document.addEventListener("DOMContentLoaded", leerLocalStorage);
 }
 
-function comprarPlatillo(e) {
+function comprarProducto(e) {
     e.preventDefault();
     if(e.target.classList.contains('agregar-carrito')){
-        const platillo = e.target.parentElement.parentElement;
-        leerDatosPlatillo(platillo);
+        const producto = e.target.parentElement.parentElement;
+        leerDatosProducto(producto);
     }
 }
 
-function leerDatosPlatillo(platillo){
-    const infoPlatillo = {
-        imagen: platillo.querySelector('img').src,
-        titulo: platillo.querySelector('h4').textContent,
-        precio: platillo.querySelector('.precio span').textContent,
-        id: platillo.querySelector('a').getAttribute('data-id')
+function leerDatosProducto(producto){
+    const infoproducto = {
+        imagen: producto.querySelector('img').src,
+        titulo: producto.querySelector('h4').textContent,
+        precio: producto.querySelector('.precio span').textContent,
+        id: producto.querySelector('a').getAttribute('data-id')
     }
 
-    insertarCarrito(infoPlatillo);
+    insertarCarrito(infoproducto);
 }
 
-function insertarCarrito(platillo) {
+function insertarCarrito(producto) {
     const row = document.createElement('tr');
     row.innerHTML = `
        <td>
-           <img src="${platillo.imagen}" width=100> 
+           <img src="${producto.imagen}" width=100> 
        </td> 
-       <td>${platillo.titulo}</td>
-       <td>${platillo.precio}</td>
+       <td>${producto.titulo}</td>
+       <td>${producto.precio}</td>
        <td>
-        <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+        <a href="#" class="borrar-producto" data-id="${producto.id}">X</a>
        </td>
     `;
-    listaPlatillos.appendChild(row);
-    guardarPlatilloLocalStorage(platillo);
+    listaproductos.appendChild(row);
+    guardarproductoLocalStorage(producto);
 }
 
-function eliminarPlatillo(e) {
+function eliminarProducto(e) {
     e.preventDefault();
 
-    let platillo,
-        platilloId;
+    let producto,
+        productoId;
     
-    if(e.target.classList.contains('borrar-platillo')) {
+    if(e.target.classList.contains('borrar-producto')) {
         e.target.parentElement.parentElement.remove();
-        platillo = e.target.parentElement.parentElement;
-        platilloId = platillo.querySelector('a').getAttribute('data-id');
+        producto = e.target.parentElement.parentElement;
+        productoId = producto.querySelector('a').getAttribute('data-id');
     }
-    eliminarPlatilloLocalStorage(platilloId)
+    eliminarProductoLocalStorage(productoId)
 }
 
 function vaciarCarrito(){
-    while(listaPlatillos.firstChild){
-        listaPlatillos.removeChild(listaPlatillos.firstChild);
+    while(listaproductos.firstChild){
+        listaproductos.removeChild(listaproductos.firstChild);
     }
     vaciarLocalStorage();
 
     return false;
 }
 
-function guardarPlatilloLocalStorage(platillo) {
-    let platillos;
+function guardarproductoLocalStorage(producto) {
+    let productos;
 
-    platillos = obtenerPlatillosLocalStorage();
-    platillos.push(platillo);
+    productos = obtenerproductosLocalStorage();
+    productos.push(producto);
 
-    localStorage.setItem('platillos', JSON.stringify(platillos));
+    localStorage.setItem('productos', JSON.stringify(productos));
 }
 
-function obtenerPlatillosLocalStorage() {
-    let platillosLS;
+function obtenerproductosLocalStorage() {
+    let productosLS;
 
-    if(localStorage.getItem('platillos') === null) {
-        platillosLS = [];
+    if(localStorage.getItem('productos') === null) {
+        productosLS = [];
     }else {
-        platillosLS = JSON.parse(localStorage.getItem('platillos'));
+        productosLS = JSON.parse(localStorage.getItem('productos'));
     }
-    return platillosLS;
+    return productosLS;
 }
 
 function leerLocalStorage() {
-    let platillosLS;
+    let productosLS;
 
-    platillosLS = obtenerPlatillosLocalStorage();
+    productosLS = obtenerproductosLocalStorage();
 
-    platillosLS.forEach(function(platillo){
+    productosLS.forEach(function(producto){
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <img src="${platillo.imagen}" width=100>
+                <img src="${producto.imagen}" width=100>
             </td>
-            <td>${platillo.titulo}</td>
-            <td>${platillo.precio}</td>
+            <td>${producto.titulo}</td>
+            <td>${producto.precio}</td>
             <td>
-                <a href="#" class="borrar-platillo" data-id="${platillo.id}">X</a>
+                <a href="#" class="borrar-producto" data-id="${producto.id}">X</a>
             </td>
         `;
-        listaPlatillos.appendChild(row);
+        listaproductos.appendChild(row);
     });
 }
 
-function eliminarPlatilloLocalStorage(platillo) {
-    let platillosLS;
-    platillosLS = obtenerPlatillosLocalStorage();
+function eliminarProductoLocalStorage(producto) {
+    let productosLS;
+    productosLS = obtenerproductosLocalStorage();
 
-    platillosLS.forEach(function(platilloLS, index){
-        if(platilloLS.id === platillo) {
-            platillosLS.splice(index, 1);
+    productosLS.forEach(function(productoLS, index){
+        if(productoLS.id === producto) {
+            productosLS.splice(index, 1);
         }
     });
 
-    localStorage.setItem('platillos', JSON.stringify(platillosLS));
+    localStorage.setItem('productos', JSON.stringify(productosLS));
 }
 
 function vaciarLocalStorage() {
